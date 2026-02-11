@@ -1,0 +1,87 @@
+@import url(styleGlobal.css);
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.foto {
+  width: 170px;
+  height: 170px;
+  padding: 4px;
+  border-radius: 50%;
+  background: linear-gradient(
+    10deg,
+    var(--laranja),
+    var(--amarelo),
+    var(--vermelho)
+  );
+  overflow: hidden;
+}
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: center top;
+  display: block;
+}
+
+.logo {
+  max-width: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.sub-logo {
+  width: 200px;
+}
+p {
+  text-align: right;
+  color: white;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.links button {
+  background: linear-gradient(
+    160deg,
+    var(--laranja),
+    var(--amarelo),
+    var(--vermelho)
+  );
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  width: 290px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+button img {
+  max-width: 30px;
+  margin-right: 10px;
+  filter: brightness(0) invert(1); /*transforma qualquer imagem em branca*/
+}
