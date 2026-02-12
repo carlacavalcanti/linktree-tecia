@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  --vermelho: #ff5100;
+  --laranja: #ff6e5f;
+  --amarelo: #ff8800;
+  --glass: rgba(0, 0, 0, 0.18);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+  line-height: 1.7;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-principal {
+  width: 100%;
+  max-height: 400px;
+  opacity: 0.5;
+}
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.paragrafo {
+  text-align: justify;
+  padding: 20px;
+  max-width: 300px;
+  border-radius: 10px;
+  margin-top: 20px;
+  background:
+    linear-gradient(#0f0f0f, #0f0f0f) padding-box,
+    linear-gradient(10deg, var(--laranja), var(--amarelo), var(--vermelho))
+      border-box;
+  border: 2px solid transparent;
+  overflow: visible;
+}
+
+.paragrafo {
+  animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.beneficios {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.beneficios li {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  transition: 0.3s;
+  text-align: justify;
+}
+
+.beneficios li:hover {
+  transform: translateY(-4px);
+  border-color: #ff7a00;
+}
+
+.beneficios li:hover,
+.beneficios li:active {
+  border-color: #ff7a00;
+  background: #1a1a1a;
+}
+
+.icon {
+  color: #00ff88;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.beneficios strong {
+  display: block;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.beneficios p {
+  color: #aaa;
+  margin: 0;
+}
+.itens {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.itens h1 {
+  font-size: 28px;
+}
+.valores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background:
+    linear-gradient(#0f0f0f, #0f0f0f) padding-box,
+    linear-gradient(10deg, var(--laranja), var(--amarelo), var(--vermelho))
+      border-box;
+  border: 2px solid transparent;
+
+  min-width: 250px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+}
+
+.container-card {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  min-width: max-content;
+  scroll-snap-align: center;
+}
+.carrosel-container {
+  overflow-x: auto;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}

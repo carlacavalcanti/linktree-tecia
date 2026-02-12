@@ -13,12 +13,9 @@ body {
   line-height: 1.7;
 }
 
-/* HERO */
-
 .hero {
   position: relative;
   height: 80vh;
-  background: url("assets/competicao2.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,8 +108,6 @@ ul li {
   margin-bottom: 8px;
   opacity: 0.85;
 }
-
-/* CTA */
 
 .cta {
   text-align: center;
