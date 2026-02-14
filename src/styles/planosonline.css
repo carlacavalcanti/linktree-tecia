@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
 :root {
-  --vermelho: #ff5100;
-  --laranja: #ff6e5f;
-  --amarelo: #ff8800;
+  --vermelho: #ff3c00;
+  --laranja-escuro: #ff5a00;
+  --laranja: #ff7a00;
+  --laranja-claro: #ff9a00;
+  --amarelo: #ffb800;
+  --amarelo-forte: #ffd500;
   --glass: rgba(0, 0, 0, 0.18);
 }
 * {
@@ -20,54 +23,58 @@ body {
 }
 
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 400px;
+  overflow: hidden;
   width: 100%;
 }
 
 .logo-principal {
   width: 100%;
-  max-height: 400px;
-  opacity: 0.5;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+  opacity: 0.16;
 }
-.header-container {
+.conteudo {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 100%;
+  position: relative;
+  z-index: -1;
+  margin-top: -102%;
+}
+.hero-text {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .paragrafo {
   text-align: justify;
+  width: clamp(21rem, 16.714rem + 11.429vw, 27rem);
   padding: 20px;
-  max-width: 300px;
-  border-radius: 10px;
-  margin-top: 20px;
-  background:
-    linear-gradient(#0f0f0f, #0f0f0f) padding-box,
-    linear-gradient(10deg, var(--laranja), var(--amarelo), var(--vermelho))
-      border-box;
+  margin-bottom: 60px;
+  border-radius: 12px;
   border: 2px solid transparent;
-  overflow: visible;
+  background:
+    linear-gradient(#3b3838, #2e2b2b) padding-box,
+    linear-gradient(
+        90deg,
+        var(--laranja),
+        var(--laranja-claro),
+        var(--amarelo),
+        var(--amarelo-forte)
+      )
+      border-box;
+
+  background-size: 400% 100%;
+  animation: border-flow 5s linear infinite;
 }
 
-.paragrafo {
-  animation: flutuar 3s ease-in-out infinite;
-}
-
-@keyframes flutuar {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.03);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 .beneficios {
   list-style: none;
   padding: 0;
@@ -144,6 +151,36 @@ header {
   text-align: center;
 }
 
+.icon-card {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  background: var(--laranja);
+  -webkit-mask: url("../assets/icons/fitness.png") no-repeat center/contain;
+  mask: url("../assets/icons/fitness.png") no-repeat center/contain;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.icon-card.bronze {
+  background: var(--laranja);
+}
+.icon-card.prata {
+  background: #c0c0c0;
+}
+.icon-card.ouro {
+  background: var(--amarelo);
+}
+.icon-card.elite {
+  background: var(--vermelho);
+}
+.card img {
+  width: 100px;
+}
+.bronze {
+  width: 50px;
+  fill: #ffd700; /* dourado */
+}
 .container-card {
   display: flex;
   gap: 20px;
@@ -157,4 +194,17 @@ header {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+}
+
+@keyframes border-flow {
+  0% {
+    background-position:
+      0% 50%,
+      0% 50%;
+  }
+  100% {
+    background-position:
+      0% 50%,
+      100% 50%;
+  }
 }

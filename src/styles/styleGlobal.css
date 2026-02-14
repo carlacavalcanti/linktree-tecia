@@ -2,9 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 :root {
-  --vermelho: #ff5100;
-  --laranja: #ff6e5f;
-  --amarelo: #ff8800;
+  --vermelho: #ff3c00;
+  --laranja-escuro: #ff5a00;
+  --laranja: #ff7a00;
+  --laranja-claro: #ff9a00;
+  --amarelo: #ffb800;
+  --amarelo-forte: #ffd500;
+
   --glass: rgba(0, 0, 0, 0.18);
 }
 

@@ -82,7 +82,9 @@ img {
   height: 300px;
   margin-bottom: 50px;
   box-shadow: 0 0 40px rgba(255, 120, 0, 0.8);
+  animation: flutuar 3s ease-in-out infinite;
 }
+
 h2 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -124,6 +126,8 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s ease;
+  width: clamp(17rem, 12.714rem + 11.429vw, 23rem);
+  animation: flutuar 3s ease-in-out infinite;
 }
 
 button:hover {
@@ -143,5 +147,16 @@ button:hover {
 
   .hero {
     height: 70vh;
+  }
+}
+@keyframes flutuar {
+  0% {
+    transform: translateZ(0) scale(1);
+  }
+  50% {
+    transform: translateZ(50px) scale(1.05);
+  }
+  100% {
+    transform: translateZ(0) scale(1);
   }
 }

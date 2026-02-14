@@ -61,7 +61,7 @@ p {
   margin-bottom: 20px;
 }
 
-.links button {
+/*.links button {
   background: linear-gradient(
     160deg,
     var(--laranja),
@@ -79,9 +79,61 @@ p {
   align-items: center;
   gap: 12px;
 }
-
+*/
 button img {
   max-width: 30px;
   margin-right: 10px;
   filter: brightness(0) invert(1); /*transforma qualquer imagem em branca*/
+}
+
+button {
+  position: relative;
+  padding: 16px 36px;
+  border-radius: 999px;
+  background: #121212;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  width: 290px;
+  display: flex;
+
+  align-items: center;
+  gap: 12px;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* espessura da borda */
+  border-radius: inherit;
+
+  background: linear-gradient(
+    80deg,
+    var(--laranja),
+    var(--laranja-claro),
+    var(--amarelo),
+    var(--amarelo-forte)
+  );
+
+  background-size: 400% 100%;
+  animation: border-flow 5s linear infinite;
+
+  /* mostra SOMENTE a borda */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+@keyframes border-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
 }
