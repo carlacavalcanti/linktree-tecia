@@ -23,9 +23,19 @@ body {
 }
 
 header {
+  position: relative;
   height: 400px;
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.topo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
 .logo-principal {
@@ -33,18 +43,18 @@ header {
   height: 100%;
   object-fit: cover;
   object-position: center 40%;
-  display: block;
-  opacity: 0.16;
+  opacity: 0.4;
 }
+
 .conteudo {
+  position: relative;
+  z-index: 1;
+  margin-top: 30px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 100%;
-  position: relative;
-  z-index: -1;
-  margin-top: -102%;
 }
 .hero-text {
   margin-top: 40px;
@@ -54,25 +64,42 @@ header {
 }
 
 .paragrafo {
-  text-align: justify;
-  width: clamp(21rem, 16.714rem + 11.429vw, 27rem);
+  position: relative;
   padding: 20px;
+  width: clamp(19rem, 16.714rem + 11.429vw, 27rem);
   margin-bottom: 60px;
   border-radius: 12px;
-  border: 2px solid transparent;
-  background:
-    linear-gradient(#3b3838, #2e2b2b) padding-box,
-    linear-gradient(
-        90deg,
-        var(--laranja),
-        var(--laranja-claro),
-        var(--amarelo),
-        var(--amarelo-forte)
-      )
-      border-box;
+  text-align: justify;
 
+  background: rgba(20, 20, 20, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  z-index: 1;
+}
+.paragrafo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--laranja),
+    var(--laranja-claro),
+    var(--amarelo),
+    var(--amarelo-forte)
+  );
   background-size: 400% 100%;
   animation: border-flow 5s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  z-index: -1;
 }
 
 .beneficios {
@@ -106,7 +133,7 @@ header {
 }
 
 .icon {
-  color: #00ff88;
+  color: #00ff88 !important;
   font-weight: bold;
   font-size: 20px;
 }
@@ -175,7 +202,7 @@ header {
   background: var(--vermelho);
 }
 .card img {
-  width: 100px;
+  width: 120px;
 }
 .bronze {
   width: 50px;
