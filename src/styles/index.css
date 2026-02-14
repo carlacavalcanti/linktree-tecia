@@ -108,21 +108,22 @@ button::before {
   content: "";
   position: absolute;
   inset: 0;
-  padding: 2px; /* espessura da borda */
+  padding: 2px;
   border-radius: inherit;
 
   background: linear-gradient(
-    80deg,
-    var(--laranja),
-    var(--laranja-claro),
-    var(--amarelo),
-    var(--amarelo-forte)
+    90deg,
+    #e65c00,
+    /* laranja mais escuro */ #ff7a00,
+    /* seu principal */ #ffb366,
+    /* mais claro */ #ff7a00,
+    #e65c00
   );
 
-  background-size: 400% 100%;
-  animation: border-flow 5s linear infinite;
+  background-size: 300% 100%; /* IMPORTANTE */
+  background-position: 0% 50%; /* COMEÇA AQUI */
+  animation: border-flow 4s linear infinite;
 
-  /* mostra SOMENTE a borda */
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -134,6 +135,6 @@ button::before {
     background-position: 0% 50%;
   }
   100% {
-    background-position: 400% 50%;
+    background-position: 300% 50%;
   }
 }
