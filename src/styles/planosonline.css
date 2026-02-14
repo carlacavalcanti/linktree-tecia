@@ -43,7 +43,7 @@ header {
   height: 100%;
   object-fit: cover;
   object-position: center 40%;
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
 .conteudo {
@@ -66,14 +66,10 @@ header {
 .paragrafo {
   position: relative;
   padding: 20px;
-  width: clamp(19rem, 16.714rem + 11.429vw, 27rem);
+  width: 275px;
   margin-bottom: 60px;
   border-radius: 12px;
   text-align: justify;
-
-  background: rgba(20, 20, 20, 0.45);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
 
   z-index: 1;
 }
@@ -87,8 +83,7 @@ header {
     90deg,
     var(--laranja),
     var(--laranja-claro),
-    var(--amarelo),
-    var(--amarelo-forte)
+    var(--amarelo)
   );
   background-size: 400% 100%;
   animation: border-flow 5s linear infinite;
@@ -119,6 +114,7 @@ header {
   border-radius: 12px;
   transition: 0.3s;
   text-align: justify;
+  flex-direction: center;
 }
 
 .beneficios li:hover {
@@ -133,9 +129,7 @@ header {
 }
 
 .icon {
-  color: #00ff88 !important;
-  font-weight: bold;
-  font-size: 20px;
+  width: clamp(2rem, 0.643rem + 0.952vw, 2.5rem);
 }
 
 .beneficios strong {
@@ -182,11 +176,27 @@ header {
   width: 48px;
   height: 48px;
   margin: 0 auto 12px;
-  background: var(--laranja);
-  -webkit-mask: url("../assets/icons/fitness.png") no-repeat center/contain;
-  mask: url("../assets/icons/fitness.png") no-repeat center/contain;
+
+  background-color: var(--laranja);
+
+  -webkit-mask-image: url("../assets/icons/fitness.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
   -webkit-mask-size: contain;
+
+  mask-image: url("../assets/icons/fitness.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
   mask-size: contain;
+
+  animation: glow 2s infinite ease-in-out;
+  transition: transform 0.3s ease;
+
+  filter: drop-shadow(0 0 8px rgba(255, 122, 0, 0.7));
+}
+
+.card:hover .icon-card {
+  transform: scale(1.1);
 }
 
 .icon-card.bronze {
@@ -204,10 +214,7 @@ header {
 .card img {
   width: 120px;
 }
-.bronze {
-  width: 50px;
-  fill: #ffd700; /* dourado */
-}
+
 .container-card {
   display: flex;
   gap: 20px;
@@ -221,17 +228,4 @@ header {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-}
-
-@keyframes border-flow {
-  0% {
-    background-position:
-      0% 50%,
-      0% 50%;
-  }
-  100% {
-    background-position:
-      0% 50%,
-      100% 50%;
-  }
 }
