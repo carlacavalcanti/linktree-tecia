@@ -3,31 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fundo Animado com SVG</title>
+    <title>Planos Presenciais</title>
     <link rel="stylesheet" href="./src/styles/planospresenciais.css" />
   </head>
   <body>
-    <div class="background">
-      <!-- Você pode adicionar o seu SVG aqui ou linkar um arquivo SVG -->
-      <img
-        src="./src/assets/icons/gear.svg"
-        alt="Animação SVG"
-        class="svg-animation"
-      />
-    </div>
+    <header class="header-container">
+      <div class="topo">
+        <img
+          class="logo-principal"
+          src="./src/assets/imagens/aulapresencial.png"
+        />
+      </div>
+      <div class="conteudo">
+        <h1>Acompanhamento Presencial</h1>
+        <p class="paragrafo">
+          Treine com acompanhamento individual e atenção total aos seus
+          movimentos. Corrijo sua execução em tempo real, ajusto cargas e
+          intensidade conforme sua evolução e garanto que cada treino seja
+          produtivo, seguro e focado no seu resultado.
+        </p>
+      </div>
+    </header>
+    <section class="section-planos">
+      <h2>PLANOS PRESENCIAIS</h2>
 
-    <div>
-      texto texto texto texto texto texto texto texto texto texto texto texto
-      texto texto texto texto texto texto texto texto texto texto texto texto
-      texto texto texto texto texto texto texto texto texto texto texto texto
-      texto texto texto texto texto texto texto texto texto texto texto texto
-      texto texto texto texto texto texto texto texto texto texto texto texto
-      texto texto texto texto texto texto texto texto texto texto texto texto
-      texto texto texto texto texto texto texto texto texto texto texto texto
-      texto texto texto texto texto texto texto texto texto texto texto texto
-      texto texto texto texto texto texto texto texto texto texto texto texto
-      texto texto texto texto texto texto texto texto texto texto texto texto
-      texto
-    </div>
+      <div class="planos-container">
+        <!-- BRONZE -->
+        <div class="plano-card bronze">
+          <h3><span class="s-bronze">PLANO BRONZE</span> (2x na semana)</h3>
+          <p class="impacto">Base forte. Constância real.</p>
+          <ul>
+            <li>✔ Correção técnica em todos os treinos</li>
+            <li>✔ Progressão estruturada</li>
+            <li>✔ Construção de base sólida</li>
+          </ul>
+          <p class="aulas">8 aulas por mês</p>
+          <p class="preco">R$ 499,90</p>
+          <button>Quero Começar</button>
+        </div>
+
+        <!-- PRATA -->
+        <div class="plano-card prata">
+          <h3><span class="s-prata">PLANO PRATA </span>(3x na semana)</h3>
+          <p class="impacto">Evolução visível. Ritmo acelerado.</p>
+          <ul>
+            <li>✔ Mais estímulo semanal</li>
+            <li>✔ Evolução mais rápida</li>
+            <li>✔ Ajustes constantes</li>
+          </ul>
+          <p class="aulas">12 aulas por mês</p>
+          <p class="preco">R$ 600,00</p>
+          <button>Subir de Nível</button>
+        </div>
+
+        <!-- OURO -->
+        <div class="plano-card ouro">
+          <h3><span class="s-ouro">PLANO OURO</span> (4x na semana)</h3>
+          <p class="impacto">Transformação em andamento.</p>
+          <ul>
+            <li>✔ Alto volume estratégico</li>
+            <li>✔ Intensidade controlada</li>
+            <li>✔ Foco em performance</li>
+          </ul>
+          <p class="aulas">16 aulas por mês</p>
+          <p class="preco">R$ 750,90</p>
+          <button>Quero Transformar</button>
+        </div>
+
+        <!-- PLUS -->
+        <div class="plano-card plus">
+          <h3><span class="s-plus">PLANO PLUS</span> (5x na semana)</h3>
+          <p class="impacto">Compromisso máximo. Resultado máximo.</p>
+          <ul>
+            <li>✔ Acompanhamento quase diário</li>
+            <li>✔ Evolução monitorada</li>
+            <li>✔ Construção física e mental</li>
+          </ul>
+          <p class="aulas">20 aulas por mês</p>
+          <p class="preco">R$ 999,90</p>
+          <button>Quero o Máximo</button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

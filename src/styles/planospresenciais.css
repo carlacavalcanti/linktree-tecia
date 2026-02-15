@@ -1,46 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap");
+
+:root {
+  --vermelho: #ff3c00;
+  --laranja-escuro: #ff5a00;
+  --laranja: #ff7a00;
+  --laranja-claro: #ff9a00;
+  --amarelo: #ffb800;
+  --amarelo-forte: #ffd500;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
 body {
-  height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
-body {
+/* ================= HERO ================= */
+
+.header-container {
+  position: relative;
+  min-height: 90vh;
+  width: 100%;
+  overflow: visible;
+
   display: flex;
-  justify-content: center;
   align-items: center;
-  overflow: hidden;
-  background-color: gray;
+  justify-content: center;
+  padding: clamp(120px, 18vh, 220px) 20px 80px; /* adiciona espaçamento superior responsivo */
 }
 
-.background {
+.topo {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
+  z-index: 0;
+}
+
+.logo-principal {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: 65% center;
+  opacity: 0.35;
+}
+
+/* overlay moderno */
+.topo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 10%,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(0, 0, 0, 0.4) 70%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.conteudo {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 0 20px;
+  margin-top: 250px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  z-index: -1; /* Faz com que a animação fique atrás do conteúdo principal */
+  text-align: center;
 }
 
-.svg-animation {
-  width: 1000px; /* Ajuste o tamanho do SVG conforme necessário */
-  height: 1000px;
-  animation: rotate 50s linear infinite; /* Animação de rotação */
+.conteudo h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-shadow: 0 0 25px rgba(255, 122, 0, 0.4);
 }
 
-@keyframes rotate {
+.paragrafo {
+  position: relative;
+  padding: 28px;
+  width: 520px;
+  min-width: 520px;
+  max-width: 520px;
+  margin: 0 auto;
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.55);
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* borda animada */
+.paragrafo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(90deg, var(--laranja), var(--laranja-claro));
+  background-size: 400% 100%;
+  animation: border-flow 5s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  z-index: -1;
+}
+
+@keyframes border-flow {
   0% {
-    transform: rotate(0deg);
+    background-position: 0% 50%;
   }
   100% {
-    transform: rotate(360deg);
+    background-position: 400% 50%;
+  }
+}
+
+
+.section-planos {
+  padding: 40px 20px 100px;
+  text-align: center;
+  background: linear-gradient(to bottom, #0f0f0f 0%, #111111 40%, #0f0f0f 100%);
+}
+
+.section-planos h2 {
+  font-size: 40px;
+  margin-bottom: 60px;
+  letter-spacing: 3px;
+}
+
+.planos-container {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+/* cards modernos */
+.plano-card {
+  width: 300px;
+  background: linear-gradient(145deg, #1a1a1a, #111111);
+  border-radius: 20px;
+  padding: 35px 25px;
+  flex-shrink: 0;
+  transition: 0.4s ease;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 0.02);
+}
+button {
+  animation: pulsar 2.2s ease-in-out infinite;
+}
+
+@keyframes pulsar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08); /* vem pra frente */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.plano-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.plano-card .impacto {
+  font-weight: 600;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.plano-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.plano-card ul li {
+  margin-bottom: 10px;
+}
+
+.plano-card .aulas {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.plano-card .preco {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.plano-card button {
+  width: 100%;
+  background: linear-gradient(90deg, var(--laranja), var(--laranja-claro));
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: auto;
+}
+
+.plano-card button:hover {
+  transform: scale(1.05);
+}
+
+/* cores individuais */
+.bronze {
+  border-color: #cd7f32;
+  box-shadow:
+    0 0 12px #cd7f32,
+    0 20px 50px rgba(0, 0, 0, 0.7);
+}
+.prata {
+  border-color: #c0c0c0;
+  box-shadow:
+    0 0 12px #c0c0c0,
+    0 20px 50px rgba(0, 0, 0, 0.7);
+}
+.plus {
+  border-color: #c770ff;
+  box-shadow:
+    0 0 12px #c770ff,
+    0 20px 50px rgba(0, 0, 0, 0.7);
+
+}
+
+/* destaque plano ouro */
+.ouro {
+  border-color: #d4af37;
+  box-shadow:
+    0 0 12px #d4af37,
+    0 20px 50px rgba(0, 0, 0, 0.7);
+}
+.s-bronze {
+  color: #cd7f32;
+  text-shadow:  0 0 12px #cd7f32,
+  0 20px 50px rgba(0, 0, 0, 0.7);;
+}
+.s-prata {
+  color: #c0c0c0;
+  text-shadow:
+  0 0 12px #c0c0c0,
+    0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.s-ouro {
+color:#d4af37;
+text-shadow:  0 0 12px #d4af37,
+0 20px 50px rgba(0, 0, 0, 0.7);;
+}
+.s-plus {
+  color:#c770ff;
+text-shadow:  0 0 12px #c770ff,
+0 20px 50px rgba(0, 0, 0, 0.7);;
+}
+@media (max-width: 600px) {
+  .paragrafo {
+    width: 295px;
+    min-width: 295px;
+    max-width: 295px;
+  }
+}
+
+@media (max-width: 375px) {
+  .header-container {
+    align-items: center; /* centraliza verticalmente */
+    padding-bottom: 0;
+    padding-top: 40px; /* reduzido espaço no topo */
+  }
+  .conteudo {
+    margin-top: 40px; /* reduzido margin-top */
   }
 }

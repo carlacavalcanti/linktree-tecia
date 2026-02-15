@@ -22,12 +22,7 @@ header {
   height: 170px;
   padding: 4px;
   border-radius: 50%;
-  background: linear-gradient(
-    10deg,
-    var(--laranja),
-    var(--amarelo),
-    var(--vermelho)
-  );
+  background: linear-gradient(10deg, var(--laranja), var(--vermelho));
   overflow: hidden;
 }
 .foto img {
@@ -61,25 +56,6 @@ p {
   margin-bottom: 20px;
 }
 
-/*.links button {
-  background: linear-gradient(
-    160deg,
-    var(--laranja),
-    var(--amarelo),
-    var(--vermelho)
-  );
-  font-size: 16px;
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  width: 290px;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-*/
 button img {
   max-width: 30px;
   margin-right: 10px;
@@ -115,7 +91,7 @@ button::before {
     90deg,
     #e65c00,
     /* laranja mais escuro */ #ff7a00,
-    /* seu principal */ #ffb366,
+
     /* mais claro */ #ff7a00,
     #e65c00
   );
