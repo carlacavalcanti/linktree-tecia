@@ -112,13 +112,15 @@ ul li {
 }
 
 .cta {
-  text-align: center;
+
+  align-items: center;
   background: #0d0d0d;
 }
 .btn-whats {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   margin-top: 20px;
   padding: 10px 20px;
