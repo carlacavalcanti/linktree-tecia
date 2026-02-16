@@ -257,6 +257,44 @@ body {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 }
+.btn-whats {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+  padding: 10px 10px;
+  border-radius: 8px;
+
+  background: linear-gradient(90deg, #ff5100, #ff8800);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: flutuar 3s ease-in-out infinite;
+}
+
+.btn-whats:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px #ff5100;
+}
+.valores {
+  margin-bottom: 30px;
+}
+@keyframes flutuar {
+  0% {
+    transform: translateZ(0) scale(1);
+  }
+  50% {
+    transform: translateZ(50px) scale(1.05);
+  }
+  100% {
+    transform: translateZ(0) scale(1);
+  }
+}
 
 @media (max-width: 600px) {
   .paragrafo {

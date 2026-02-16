@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap");
+
+:root {
+  --vermelho: #ff3c00;
+  --laranja-escuro: #ff5a00;
+  --laranja: #ff7a00;
+  --laranja-claro: #ff9a00;
+  --amarelo: #ffb800;
+  --amarelo-forte: #ffd500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+}
+
+.img {
+  max-width: 280px;
+  display: inline-block;
+  padding: 3px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, var(--laranja-escuro), var(--laranja));
+  box-shadow:
+    0 0 20px rgba(255, 90, 0, 0.35),
+    0 15px 35px rgba(0, 0, 0, 0.6);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.img:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 30px rgba(255, 120, 0, 0.6),
+    0 20px 45px rgba(0, 0, 0, 0.8);
+}
+.hero {
+  position: relative;
+  height: 70vh;
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 90, 0, 0.25),
+    #0f0f0f 70%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.85)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  text-align: center;
+  max-width: 800px;
+  text-shadow: 0 5px 10px var(--laranja-escuro);
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+}
+p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #e5e5e5;
+  max-width: 600px;
+}
+
+span {
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: center;
+  max-width: 600px;
+  display: inline-block;
+  position: relative;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff5100, #ff8800);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+span::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* espessura da borda */
+  border-radius: inherit;
+  background: linear-gradient(90deg, #e65c00, #ff7a00, #ffa600);
+  background-size: 300% 100%;
+  animation: border-move 4s linear infinite;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+.background {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px 20px;
+  color: white;
+
+  background: linear-gradient(135deg, #ff5100, #ff7a00, #ff9a00);
+  background-size: 300% 200%;
+  animation: gradientMove 5s ease infinite;
+  border-radius: 18px;
+}
+.btn-whats {
+  position: relative;
+
+  padding: 12px 36px;
+  border-radius: 999px;
+  background: #121212;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  width: 290px;
+  display: flex;
+
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap; /* mantém texto em uma linha */
+  width: auto; /* deixa o width automático baseado no conteúdo */
+}
+
+.btn-whats::before {
+  content: "";
+  position: absolute;
+
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    #e65c00,
+    /* laranja mais escuro */ #ff7a00,
+
+    /* mais claro */ #ff7a00,
+    #e65c00
+  );
+
+  background-size: 300% 100%; /* IMPORTANTE */
+  background-position: 0% 50%; /* COMEÇA AQUI */
+  animation: border-flow 4s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+@keyframes border-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes border-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
