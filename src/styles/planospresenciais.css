@@ -145,13 +145,49 @@ body {
   display: flex;
   gap: 30px;
   overflow-x: auto;
-  padding-bottom: 20px;
+  scroll-behavior: smooth;
+
+  padding: 0 20px; /* espaço interno leve */
+  scrollbar-width: none;
+
   align-items: stretch; /* garante todos os cards com mesma altura */
 }
+.planos-container::-webkit-scrollbar {
+  display: none;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 20;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow.left {
+  left: -20px; /* agora fica fora do card */
+}
+
+.arrow.right {
+  right: -20px;
+}
 /* cards modernos */
 .plano-card {
-  width: 300px;
+  max-width: clamp(17rem, 12.714rem + 11.429vw, 23rem);
   background: linear-gradient(145deg, #1a1a1a, #111111);
   border-radius: 20px;
   padding: 35px 25px;
@@ -327,7 +363,7 @@ body {
     0 0 12px #c0c0c0,
     0 20px 50px rgba(0, 0, 0, 0.7);
 }
-.ouro a{
+.ouro a {
   color: #d4af37;
   box-shadow:
     0 0 12px #d4af37,
@@ -344,6 +380,10 @@ body {
     width: 295px;
     min-width: 295px;
     max-width: 295px;
+  }
+  #prev,
+  #next {
+    display: none;
   }
 }
 

@@ -1,4 +1,4 @@
-const container = document.querySelector(".carrosel-container");
+const container = document.querySelector(".planos-container");
 const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
 
