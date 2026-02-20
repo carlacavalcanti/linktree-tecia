@@ -1,11 +1,11 @@
-const container = document.querySelector(".carrosel-container");
-const prev = document.querySelector("#prev");
-const next = document.querySelector("#next");
+const carousel = document.getElementById("carousel");
+const next = document.getElementById("next");
+const prev = document.getElementById("prev");
 
 next.addEventListener("click", () => {
-  container.scrollBy({ left: 260, behavior: "smooth" });
+  carousel.scrollBy({ left: 300, behavior: "smooth" });
 });
 
 prev.addEventListener("click", () => {
-  container.scrollBy({ left: -260, behavior: "smooth" });
+  carousel.scrollBy({ left: -300, behavior: "smooth" });
 });

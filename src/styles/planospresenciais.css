@@ -132,6 +132,7 @@ body {
 .section-planos {
   padding: 40px 20px 100px;
   text-align: center;
+
   background: linear-gradient(to bottom, #0f0f0f 0%, #111111 40%, #0f0f0f 100%);
 }
 
@@ -143,6 +144,7 @@ body {
 
 .planos-container {
   display: flex;
+
   gap: 30px;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -155,6 +157,7 @@ body {
 .planos-container::-webkit-scrollbar {
   display: none;
 }
+
 .carousel {
   position: relative;
   width: 100%;
@@ -374,6 +377,21 @@ body {
   box-shadow:
     0 0 12px #c770ff,
     0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+@media (min-width: 1101px) {
+  #prev,
+  #next {
+    display: none;
+  }
+  .logo-principal {
+    object-position: top center;
+  }
+
+  .planos-container {
+    overflow-x: visible; /* remove comportamento de scroll */
+    justify-content: center; /* centraliza os cards */
+  }
 }
 @media (max-width: 600px) {
   .paragrafo {

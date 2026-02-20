@@ -269,11 +269,10 @@ body {
   display: flex;
   gap: 20px;
   padding: 20px;
-  min-width: max-content;
-  scroll-snap-align: center;
+  justify-content: flex-start;
 }
 .carrosel-container {
-  overflow-x: scroll;
+  overflow-x: auto;
   scrollbar-width: none;
 
   scroll-snap-type: x mandatory;
@@ -287,24 +286,38 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  border: none;
-  width: 42px;
-  height: 42px;
+
+  width: 44px;
+  height: 44px;
+
   border-radius: 50%;
-  font-size: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+
+  color: #fff;
+  font-size: 26px;
+  font-weight: 300;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   cursor: pointer;
-  z-index: 20;
+  z-index: 10;
+
+  transition: all 0.25s ease;
 }
 
 .arrow.left {
-  left: 8px;
+  left: 0;
 }
 
 .arrow.right {
-  right: 8px;
+  right: 0;
 }
+
 .cta {
   display: flex;
   justify-content: center;
@@ -345,6 +358,8 @@ body {
 .carousel-wrapper {
   position: relative;
   width: 100%;
+  overflow: visible;
+  padding: 0 40px;
 }
 
 @keyframes float {
@@ -359,6 +374,16 @@ body {
   }
 }
 
+@media (min-width: 1101px) {
+  #prev,
+  #next {
+    display: none;
+  }
+  .carrosel-container {
+    display: flex;
+    justify-content: center;
+  }
+}
 @media (max-width: 600px) {
   .paragrafo {
     width: 295px;

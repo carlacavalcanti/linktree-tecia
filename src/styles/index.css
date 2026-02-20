@@ -3,6 +3,11 @@ a {
   text-decoration: none;
   color: inherit;
 }
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
 .container {
   max-width: 1024px;
   margin: 0 auto;
@@ -112,5 +117,10 @@ button::before {
   }
   100% {
     background-position: 300% 50%;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  body {
+    align-items: center;
   }
 }
