@@ -1,10 +1,10 @@
-##Linktree Tecia
+Linktree Tecia
 
 Landing page estratégica para centralização de links e conversão digital.
 
 🔗 Deploy: https://linktree-tecia.vercel.app/
 
-##Contexto do Projeto
+Contexto do Projeto
 
 O Linktree Tecia é uma solução front-end desenvolvida para organizar e apresentar links estratégicos de forma clara, objetiva e responsiva.
 
@@ -20,7 +20,7 @@ Estrutura escalável
 
 Organização de código
 
-##Problema que o projeto resolve
+Problema que o projeto resolve
 
 Perfis em redes sociais permitem apenas um link na bio.
 A proposta aqui foi criar uma solução personalizada que:
@@ -35,7 +35,7 @@ Organiza informações de forma estratégica
 
 Mantém identidade visual consistente
 
-##Tecnologias Utilizadas
+Tecnologias Utilizadas
 
 HTML5 — Estrutura semântica
 
@@ -45,7 +45,7 @@ JavaScript — Interatividade e controle de navegação
 
 Deploy com Vercel — Publicação em ambiente de produção
 
-##Estrutura do projeto
+Estrutura do projeto
  linktree-tecia
  ┣ src
  ┃ ┣ index.html
@@ -56,7 +56,7 @@ Deploy com Vercel — Publicação em ambiente de produção
  ┣ package.json
  ┗ README.md
 
-##Destaques Técnicos
+Destaques Técnicos
 
 - Estrutura HTML organizada e semântica
 - Layout responsivo adaptado para mobile e desktop 
@@ -65,7 +65,7 @@ Deploy com Vercel — Publicação em ambiente de produção
 - Deploy funcional e acessível
 
 
-##Competências Demonstradas
+Competências Demonstradas
 
 Este projeto evidencia minha capacidade de:
 
@@ -79,7 +79,7 @@ Desenvolver soluções simples e eficientes
 
 Entregar projeto publicado e acessível
 
-##Como Executar Localmente
+Como Executar Localmente
 git clone https://github.com/carlacavalcanti/linktree-tecia.git
 cd linktree-tecia
 Abra o index.html no navegador
