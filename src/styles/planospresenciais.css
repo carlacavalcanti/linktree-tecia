@@ -23,8 +23,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ================= HERO ================= */
-
 .header-container {
   position: relative;
   min-height: 90vh;
@@ -100,7 +98,6 @@ body {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
-/* borda animada */
 .paragrafo::before {
   content: "";
   position: absolute;
@@ -118,15 +115,6 @@ body {
   mask-composite: exclude;
 
   z-index: -1;
-}
-
-@keyframes border-flow {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 400% 50%;
-  }
 }
 
 .section-planos {
@@ -182,13 +170,13 @@ body {
 }
 
 .arrow.left {
-  left: -20px; /* agora fica fora do card */
+  left: -20px;
 }
 
 .arrow.right {
   right: -20px;
 }
-/* cards modernos */
+
 .plano-card {
   max-width: clamp(17rem, 12.714rem + 11.429vw, 23rem);
   background: linear-gradient(145deg, #1a1a1a, #111111);
@@ -250,7 +238,7 @@ body {
   text-decoration: none;
 
   z-index: 1;
-  margin-top: auto; /* empurra o botão para o final do card */
+  margin-top: auto;
 }
 .plano-card a::before {
   content: "";
@@ -272,20 +260,10 @@ body {
   z-index: -1;
 }
 
-@keyframes border-move {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 300% 50%;
-  }
-}
-
 .plano-card a:hover {
   transform: scale(1.05);
 }
 
-/* cores individuais dos botões */
 .bronze a::before {
   background: linear-gradient(90deg, #cd7f32, #cd7f32, #cd7f32) !important;
 }
@@ -302,7 +280,6 @@ body {
   background: linear-gradient(90deg, #d4af37, #d4af37, #d4af37) !important;
 }
 
-/* cores individuais dos cards */
 .bronze {
   border-color: #cd7f32;
   box-shadow:
@@ -322,7 +299,6 @@ body {
     0 20px 50px rgba(0, 0, 0, 0.7);
 }
 
-/* destaque plano ouro */
 .ouro {
   border-color: #d4af37;
   box-shadow:
@@ -377,6 +353,27 @@ body {
   box-shadow:
     0 0 12px #c770ff,
     0 20px 50px rgba(0, 0, 0, 0.7);
+}
+.cartao {
+  margin-top: 15px;
+  font-size: clamp(0.6rem, 0.314rem + 0.762vw, 1rem);
+}
+
+@keyframes border-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+@keyframes border-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
 }
 
 @media (min-width: 1101px) {

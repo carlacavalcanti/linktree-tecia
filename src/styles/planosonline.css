@@ -118,15 +118,6 @@ body {
   z-index: -1;
 }
 
-@keyframes border-flow {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 400% 50%;
-  }
-}
-
 .beneficios {
   list-style: none;
   padding: 0;
@@ -184,7 +175,7 @@ body {
 
 .card {
   border: 2px solid transparent;
-
+  scroll-snap-align: center;
   min-width: 250px;
   flex-shrink: 0;
   border-radius: 16px;
@@ -268,9 +259,11 @@ body {
 .container-card {
   display: flex;
   gap: 20px;
-  padding: 20px;
+  padding: 20px 40px;
   justify-content: flex-start;
+  width: max-content;
 }
+
 .carrosel-container {
   overflow-x: auto;
   scrollbar-width: none;
@@ -359,9 +352,11 @@ body {
   position: relative;
   width: 100%;
   overflow: visible;
-  padding: 0 40px;
+  padding: 0 30px;
 }
-
+.cartao {
+  font-size: clamp(0.6rem, 0.314rem + 0.762vw, 0.8rem);
+}
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -371,6 +366,15 @@ body {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes border-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
   }
 }
 
